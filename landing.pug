@@ -1,0 +1,38 @@
+-var titulo = "Titulo principal :)"
+-var titulos = ["Titulo Principal","Subtitulo 1","Subtitulo 2","Subtitulo 3"]
+-var usuario = "Carlos Mata"
+mixin caja(imagen, titulo, contenido)
+	.caja 
+		.caja__imagen: img(src="images/"+imagen)
+		.caja__contenido
+			h3=titulos
+			p=contenido
+			a.buton Leer Mas
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		link(rel="stylesheet",href='css/ejercicio-pug.css')
+	body
+		header
+			h1 PlatziGames
+			if usuario 
+				a Hola #{usuario}
+			else 
+			a.boton Registro1
+		section.intro
+			.intro__image: img(src="images/imagen.png", alt="")
+			.intro__contenido 
+				h2 #{titulos[0]} 
+				p. 
+					| Lorem ipsum dolor sit amet 
+					| consectetur adipisicing elit. Minus provident 
+					| atque officia iusto vel doloribus. 
+					| Soluta quia ex laborum praesentium quos deleniti 
+					| dolores! Inventore ut quis ab iusto porro nesciunt.
+					span Proin hoaskl que as asdhet
+				a.boton Leer Mas
+		main.contenido 
+			+caja("imagen.png", titulos[1], "Lorem impsdun dolor asnda") 
+			+caja("imagen.png", titulos[2], "Lorem impsdun dolor asnda") 
+			+caja("imagen.png", titulos[3], "Lorem impsdun dolor asnda") 
